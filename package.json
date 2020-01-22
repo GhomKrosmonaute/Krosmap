@@ -2,24 +2,33 @@
   "name": "krosmap",
   "version": "1.0.0",
   "description": "Krosmaga data wrapper",
-  "main": "index.js",
+  "main": "krosmap.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "krosmaga",
-    "profiles",
     "fetch",
     "ladder",
     "elo",
     "data",
-    "wrapper"
+    "wrapper",
+    "statistic",
+    "stats"
   ],
   "author": "ghom",
   "license": "ISC",
   "dependencies": {
-    "got": "^10.2.2",
+    "axios": "^0.19.2",
     "jsdom": "^16.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamilleAbella/krosmap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CamilleAbella/krosmap/issues"
+  },
+  "homepage": "https://github.com/CamilleAbella/krosmap#readme"
 }

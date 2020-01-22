@@ -1,8 +1,8 @@
 {
-    "urls" : {
-        "lastSeason":"https://www.krosmaga.com/fr/communaute/ladder/saisonnier",
-        "season":"https://www.krosmaga.com/fr/communaute/ladder/saisonnier?season={season}",
-        "global":"https://www.krosmaga.com/fr/communaute/ladder/eternel",
-        "profile":"https://account.ankama.com/fr/profil-ankama/{username}"
+    "URL" : {
+        "seasonTop100":"https://www.krosmaga.com/fr/communaute/ladder/saisonnier?season={season}",
+        "seasonUser":"https://www.krosmaga.com/fr/communaute/ladder/saisonnier?season={season}&search={username}",
+        "globalTop100":"https://www.krosmaga.com/fr/communaute/ladder/eternel",
+        "globalUser":"https://www.krosmaga.com/fr/communaute/ladder/eternel?search={username}"
     }
 }
