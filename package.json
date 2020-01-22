@@ -1,0 +1,25 @@
+{
+  "name": "krosmap",
+  "version": "1.0.0",
+  "description": "Krosmaga data wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "krosmaga",
+    "profiles",
+    "fetch",
+    "ladder",
+    "elo",
+    "data",
+    "wrapper"
+  ],
+  "author": "ghom",
+  "license": "ISC",
+  "dependencies": {
+    "got": "^10.2.2",
+    "jsdom": "^16.0.1"
+  },
+  "devDependencies": {}
+}

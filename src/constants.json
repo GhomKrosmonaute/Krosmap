@@ -1,0 +1,8 @@
+{
+    "urls" : {
+        "lastSeason":"https://www.krosmaga.com/fr/communaute/ladder/saisonnier",
+        "season":"https://www.krosmaga.com/fr/communaute/ladder/saisonnier?season={season}",
+        "global":"https://www.krosmaga.com/fr/communaute/ladder/eternel",
+        "profile":"https://account.ankama.com/fr/profil-ankama/{username}"
+    }
+}
