@@ -1,5 +1,5 @@
 
-function parseRow( row ){
+function parseRow( row, getUsername ){
     if(!row) return { error: {
         message: '404 not found',
         code: 404
@@ -11,6 +11,7 @@ function parseRow( row ){
     }
     const rank = row.querySelector('.ak-rank')
     const elo = row.querySelector('.ak-elo')
+    if(getUsername) result.username = row.querySelector('.ak-nickname').innerHTML.trim()
     if(rank) result.rank = parseInt(rank.innerHTML,10)
     if(elo) result.elo = parseInt(elo.innerHTML,10)
     return result

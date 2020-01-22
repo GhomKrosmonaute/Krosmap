@@ -2,13 +2,14 @@
 const {
     fetchUserGlobal,
     fetchUserSeason,
-    // fetchUserAvatar
+    fetchUserProfile,
+    fetchGlobal,
+    fetchSeason
 } = require('./src/wrapper')
 
 async function fetchUser( username ){
-    return { 
-        username,
-        // avatar: await fetchUserAvatar( username ),
+    return {
+        profile: await fetchUserProfile( username ),
         global: await fetchUserGlobal( username ),
         lastSeason: await fetchUserSeason( username )
     }
@@ -18,5 +19,7 @@ module.exports = {
     fetchUser,
     fetchUserGlobal,
     fetchUserSeason,
-    // fetchUserAvatar
+    fetchUserProfile,
+    fetchGlobal,
+    fetchSeason
 }
