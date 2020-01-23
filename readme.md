@@ -18,7 +18,7 @@ const json = await krosmap.fetchUser('OTK-Val')
 console.log(json) // Data may be missing
 ```
 
-## json data
+## user data
 
 ```js
 return {
@@ -32,28 +32,28 @@ return {
 }
 ```
 
-## json missing data
+## user missing data
 
 to check because we do not always get the information we want
 
 ```js
 return {
-  profile: {
-    username: 'OTK-Val',
-    error: { message: '429 try again later', code: 429 }
-  }
-  global: { error: { message: '404 not found', code: 404 } },
-  lastSeason: { error: { message: '404 not found', code: 404 }, season: 'last' }
+  profile: false,
+  global: false,
+  lastSeason: false
 }
 ```
 
 ## stable methods
 
 ```js
-fetchUser( username ) // fetch all data of user
-fetchUserProfile( username ) // fetch profile
-fetchUserGlobal( username ) // fetch global position
-fetchUserSeason( username, season="last" )
-fetchSeason( season="last" ) // fetch season top 100
-fetchGlobal() // fetch global top 100
+fetchUser( username )                       // fetch all data of user
+
+fetchUserGlobal( username )                 // fetch global position
+fetchUserSeason( username, season="last" )  // fetch season position
+
+fetchGlobal()                               // fetch global top 100
+fetchSeason( season="last" )                // fetch season top 100
+
+fetchUserProfile( username )                // fetch profile only
 ```

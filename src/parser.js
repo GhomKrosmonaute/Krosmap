@@ -1,9 +1,6 @@
 
 function parseRow( row, getUsername ){
-    if(!row) return { error: {
-        message: '404 not found',
-        code: 404
-    }}
+    if(!row) return false
     const result = {
         position: parseInt(row.querySelector('.ak-icon-position').innerHTML,10),
         win: parseInt(row.querySelector('.ak-win').innerHTML,10),
