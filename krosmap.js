@@ -21,5 +21,9 @@ module.exports = {
     fetchUserSeason,
     fetchUserProfile,
     fetchGlobal,
-    fetchSeason
+    fetchSeason,
+    images: {
+        global: 'https://static.ankama.com/krosmaga/www/modules/community/ladder/header_eternal.fr.jpg',
+        season: 'https://static.ankama.com/krosmaga/www/modules/community/ladder/header_season.fr.jpg'
+    }
 }

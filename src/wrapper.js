@@ -1,6 +1,6 @@
 
 const { URL, LAST } = require('./constants.json')
-const { parseRow } = require('./parser')
+const { parseRow, parseSeason } = require('./parser')
 
 const { JSDOM } = require('jsdom')
 const axios = require('axios')
@@ -19,7 +19,7 @@ async function fetchUserGlobal( username ){
 
 async function fetchUserSeason( username, season ){
     try{
-        if(!season || season === "last") season = LAST
+        season = parseSeason(season)
         const res = await axios.get(
             URL.seasonUser
                 .replace('{username}',username)
@@ -27,10 +27,7 @@ async function fetchUserSeason( username, season ){
         )
         const { document } = (new JSDOM(res.data)).window
         const row = document.querySelector('tr.ak-position-me')
-        const result = parseRow(row, false)
-        if(!result) return false
-        result.season = season === LAST ? 'last' : season
-        return result
+        return parseRow(row, false)
     }catch(error){
         console.error(error)
         return false
@@ -53,32 +50,20 @@ async function fetchUserProfile( username ){
 }
 
 async function fetchSeason( season ){
-    try{
-        if(!season || season === "last") season = LAST
-        const res = await axios.get(URL.season.replace('{season}',season))
-        const { document } = (new JSDOM(res.data)).window
-        const rows = Array.from(document.querySelectorAll('table.ak-ladder tbody tr'))
-        if(rows.length === 0) return false
-        return {
-            banner: 'https://static.ankama.com/krosmaga/www/modules/community/ladder/header_season.fr.jpg',
-            top100: rows.map( row => parseRow(row,true) )
-        }
-    }catch(error){
-        console.error(error)
-        return false
-    }
+    return fetchLadder( URL.season.replace('{season}',parseSeason(season)) )
 }
 
-async function fetchGlobal(){
+function fetchGlobal(){
+    return fetchLadder( URL.global )
+}
+
+async function fetchLadder( url ){
     try{
-        const res = await axios.get(URL.global)
+        const res = await axios.get(url)
         const { document } = (new JSDOM(res.data)).window
         const rows = Array.from(document.querySelectorAll('table.ak-ladder tbody tr'))
         if(rows.length === 0) return false
-        return {
-            banner: 'https://static.ankama.com/krosmaga/www/modules/community/ladder/header_eternal.fr.jpg',
-            top100: rows.map( row => parseRow(row,true) )
-        }
+        return rows.map( row => parseRow(row,true) )
     }catch(error){
         console.error(error)
         return false

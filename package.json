@@ -1,6 +1,6 @@
 {
   "name": "krosmap",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Krosmaga data wrapper",
   "main": "krosmap.js",
   "scripts": {

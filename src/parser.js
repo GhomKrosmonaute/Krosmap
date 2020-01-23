@@ -1,4 +1,6 @@
 
+const { LAST } = require('./constants.json')
+
 function parseRow( row, getUsername ){
     if(!row) return false
     const result = {
@@ -14,6 +16,12 @@ function parseRow( row, getUsername ){
     return result
 }
 
+function parseSeason( season ){
+    if(!season || isNaN(season)) return LAST
+    return Number(season)
+}
+
 module.exports = {
+    parseSeason,
     parseRow
 }

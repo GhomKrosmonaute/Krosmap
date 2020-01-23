@@ -6,5 +6,5 @@
         "globalUser":"https://www.krosmaga.com/fr/communaute/ladder/eternel?search={username}",
         "profile":"https://account.ankama.com/fr/profil-ankama/{username}"
     },
-    "LAST" : 500
+    "LAST" : 900
 }
